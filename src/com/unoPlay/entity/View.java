@@ -30,9 +30,10 @@ public class View {
         String retorno = "Escolha sua carta: \n";
         for (Carta str: opcoes) {
             retorno += opcao + " - " + str.toString() + "\n";
+            opcao += 1;
 
         }
-        retorno += "compre uma carta\n";
+        retorno += opcao + " - Compre uma carta\n";
         retorno += "-----------------------------\n";
 
         int index = inputInt(retorno)-1;
@@ -45,6 +46,10 @@ public class View {
             System.out.println("Opção invalida, tente novamente.\n");
             return jogada(opcoes);
         }
+    }
+
+    public static void println(String string){
+        System.out.println(string);
     }
 
 }

@@ -4,11 +4,15 @@ import java.util.ArrayList;
 
 public class Jogador {
     private String name;
+    private Jogador jogadorNext;
+    private Jogador jogadorPrevious;
     private ArrayList<Carta> cartas;
 
     public Jogador(String name, ArrayList<Carta> cartas) {
         this.name = name;
         this.cartas = cartas;
+        this.jogadorNext = null;
+        this.jogadorPrevious = null;
     }
 
     public String getName() {
@@ -23,17 +27,44 @@ public class Jogador {
         return cartas.size();
     }
 
+    public Jogador getJogadorNext() {
+        return jogadorNext;
+    }
+
+    public void setJogadorNext(Jogador jogadorNext) {
+        this.jogadorNext = jogadorNext;
+    }
+
+    public Jogador getJogadorPrevious() {
+        return jogadorPrevious;
+    }
+
+    public void setJogadorPrevious(Jogador jogadorPrevious) {
+        this.jogadorPrevious = jogadorPrevious;
+    }
+
+    public ArrayList<Carta> getCartas() {
+        return cartas;
+    }
+
+    public void setCartas(ArrayList<Carta> cartas) {
+        this.cartas = cartas;
+    }
+
     public boolean vitoria(){
         return cartas.isEmpty();
     }
 
     public void comprarCarta(Carta carta){
+        View.println("você comprou uma carta:" + carta.toString());
         cartas.add(carta);
     }
 
     public Carta jogada(Carta messa) {
 
         ArrayList<Carta> cartasJogada = new ArrayList<>();
+
+        System.out.println("Messa = " + messa.toString());
 
         String cartasMao = "Suas Cartas: ";
         for (Carta carta: cartas) {

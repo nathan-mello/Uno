@@ -5,11 +5,15 @@ import java.util.ArrayList;
 public class JogadorBot extends Jogador{
     ArrayList<Carta> cartas;
     String name;
+    Jogador jogadorNext;
+    Jogador jogadorPrevious;
 
     public JogadorBot(String name, ArrayList<Carta> cartas) {
         super(name, cartas);
         this.cartas = cartas;
         this.name = name;
+        this.jogadorNext = null;
+        this.jogadorPrevious = null;
     }
 
     @Override
@@ -34,5 +38,10 @@ public class JogadorBot extends Jogador{
             cartas.remove(carta);
             return carta;
         }
+    }
+    @Override
+    public void comprarCarta( Carta carta){
+        View.println("O jogador "+ name+ " comprou uma carta");
+        cartas.add(carta);
     }
 }

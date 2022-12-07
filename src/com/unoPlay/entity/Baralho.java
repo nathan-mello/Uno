@@ -58,19 +58,19 @@ public class Baralho {
             CartaEspecial cartaDeBloqueio = new CartaEspecial(13, cor, "Carta de bloqueio");
             baralho.add(cartaDeBloqueio);
             baralho.add(cartaDeBloqueio);
-            CartaEspecial cartaDeInverter = new CartaEspecial(13, cor, "Inverte ordem");
+            CartaEspecial cartaDeInverter = new CartaEspecial(14, cor, "Inverte ordem");
             baralho.add(cartaDeInverter);
             baralho.add(cartaDeInverter);
-            CartaEspecial cartaMaisTwo = new CartaEspecial(13, cor, "compra +2");
+            CartaEspecial cartaMaisTwo = new CartaEspecial(15, cor, "compra +2");
             baralho.add(cartaMaisTwo);
             baralho.add(cartaMaisTwo);
+
+            CartaEspecial carta1 = new CartaEspecial(16, "preto", "Troca de cor");
+            baralho.add(carta1);
+
+            CartaEspecial carta2 = new CartaEspecial(17, "preto", "mais quatro");
+            baralho.add(carta2);
             }
-
-        CartaEspecial carta1 = new CartaEspecial(14, "preto", "Troca de cor");
-        baralho.add(carta1);
-
-        CartaEspecial carta2 = new CartaEspecial(14, "preto", "mais quatro");
-        baralho.add(carta2);
 
 
     }
@@ -98,6 +98,10 @@ public class Baralho {
         cartas.add(getUmaCarta());
 
         return cartas;
+    }
+
+    public int size(){
+        return baralho.size();
     }
 }
 

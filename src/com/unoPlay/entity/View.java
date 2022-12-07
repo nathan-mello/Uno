@@ -48,6 +48,22 @@ public class View {
         }
     }
 
+    public static String trocaCor(){
+        int number = inputInt("Escolha cor:\n 1 - [vermelho]\n 2 - [verde]\n 3 - [azul]\n 4 - [amarelo]\n");
+        if(number ==1){
+            return "Vermelho";
+        }else if(number ==2){
+            return "Amarelo";
+        }else if(number ==3){
+            return "Azul";
+        } else if (number == 4) {
+            return "Azul";
+        }else{
+            println("opcão invalida tente novamente");
+            return trocaCor();
+        }
+    }
+
     public static void println(String string){
         System.out.println(string);
     }

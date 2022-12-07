@@ -1,7 +1,5 @@
 package com.unoPlay.entity;
 
-// 10 = carta de boqueio;  11 = carta de reverse; 12 = carta de compra mais dois
-// 13 = troca de cor; 14 = mais quatro
 
 public class Carta {
     private Integer number;

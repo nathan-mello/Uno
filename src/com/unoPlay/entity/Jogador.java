@@ -73,7 +73,7 @@ public class Jogador {
                     cartasJogada.add(carta);
             }else if(carta.getCor().equals(messa.getCor())){
                     cartasJogada.add(carta);
-            }else if(carta.getNumber().equals(14)){
+            }else if(carta.getNumber().equals(16) || carta.getNumber().equals(17)){
                     cartasJogada.add(carta);
             }
         }
@@ -89,4 +89,11 @@ public class Jogador {
 
     }
 
+    public String trocaCor() {
+        return View.trocaCor();
+    }
+
+    public int size(){
+        return cartas.size();
+    }
 }

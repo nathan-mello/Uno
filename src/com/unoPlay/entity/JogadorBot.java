@@ -44,4 +44,48 @@ public class JogadorBot extends Jogador{
         View.println("O jogador "+ name+ " comprou uma carta");
         cartas.add(carta);
     }
+    @Override
+    public String trocaCor() {
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+        int yellow = 0;
+        for (Carta carta : cartas) {
+            switch (carta.getCor()) {
+                case "Vermelho":
+                    red++;
+                    break;
+                case "Amarelo":
+                    yellow++;
+                    break;
+                case "Azul":
+                    blue++;
+                    break;
+                case "Verde":
+                    green++;
+                    break;
+
+            }
+
+        }
+        String cor = "";
+        if (green >= red && green >= blue && green >= yellow) {
+            cor = "Verde";
+        } else if (red >= green && red >= blue && red >= yellow) {
+            cor = "Vermelho";
+        } else if (blue >= red && blue >= green && blue >= yellow) {
+            cor = "Azul";
+        } else {
+            cor = "Amarelo";
+        }
+
+        View.println("O jogador " + name + "trocou de cor para " + cor);
+        return cor;
+
+    }
+
+    public int size(){
+        return cartas.size();
+    }
+
 }
